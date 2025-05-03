@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Jogi Gowri Akash</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Jogi Gowri Akash</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on:</p>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-item" onclick="showProjectDetails(
+                    'Chatbot with Langchain and Streamlit',
+                    'Developed an advanced chatbot using Langchain integrated with Streamlit and Gemini models. The application provides a seamless conversational interface for interacting with complex data structures, offering natural language understanding and context-aware responses.',
+                    ['Langchain', 'Streamlit', 'Gemini Models', 'Python', 'NLP'],
+                    'https://github.com/yourusername/langchain-chatbot',
+                    'https://your-chatbot-demo.com'
+                )">
+                    <h3>Chatbot with Langchain and Streamlit</h3>
+                    <p>Advanced conversational AI integrating Langchain with Gemini models for natural language interactions.</p>
+                    <a href="https://github.com/yourusername/langchain-chatbot" target="_blank">View on GitHub</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item" onclick="showProjectDetails(
+                    'Habit Tracker App',
+                    'Developed as part of a UI/UX competition, this Android application helps users establish and maintain positive habits through intuitive tracking and motivational features. The app features a clean, user-friendly interface with personalized goal setting and progress visualization.',
+                    ['Android Studio', 'Java', 'UI/UX Design', 'Material Design', 'Firebase'],
+                    'https://github.com/yourusername/habit-tracker',
+                    'https://play.google.com/store/apps/details?id=com.your.habittracker'
+                )">
+                    <h3>Habit Tracker App</h3>
+                    <p>Android application for tracking daily habits with intuitive UI/UX design.</p>
+                    <a href="https://github.com/yourusername/habit-tracker" target="_blank">View on GitHub</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item" onclick="showProjectDetails(
+                    'AWS S3 Static Web Hosting',
+                    'Implemented Infrastructure as Code (IaC) using Terraform to automate the creation and configuration of AWS S3 buckets for static website hosting. The project demonstrates best practices in cloud resource provisioning and includes CI/CD pipeline integration for automated deployments.',
+                    ['Terraform', 'AWS S3', 'CI/CD', 'Infrastructure as Code', 'CloudFront'],
+                    'https://github.com/yourusername/aws-s3-static-web-hosting',
+                    'https://your-s3-website-url.com'
+                )">
+                    <h3>AWS S3 Static Web Hosting</h3>
+                    <p>Terraform project automating AWS S3 bucket creation for static web hosting.</p>
+                    <a href="https://github.com/yourusername/aws-s3-static-web-hosting" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+<div class="project-details" id="projectDetails">
+    <div class="project-details-content">
+        <span class="close-details" onclick="closeProjectDetails()">&times;</span>
+        <h3 id="projectTitle">Project Title</h3>
+        <p id="projectDescription">Project description will appear here.</p>
+        
+        <div class="project-tech" id="projectTech">
+            <!-- Technology pills will be inserted here -->
+        </div>
+        
+        <div class="project-links">
+            <a href="#" id="githubLink" class="primary" target="_blank">View on GitHub</a>
+            <a href="#" id="demoLink" class="secondary" target="_blank">Live Demo</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function showProjectDetails(title, description, techs, githubLink, demoLink) {
+    document.getElementById('projectTitle').innerText = title;
+    document.getElementById('projectDescription').innerText = description;
+    
+    const projectTech = document.getElementById('projectTech');
+    projectTech.innerHTML = '';
+    techs.forEach(tech => {
+        const pill = document.createElement('span');
+        pill.className = 'tech-pill';
+        pill.innerText = tech;
+        projectTech.appendChild(pill);
+    });
+    
+    document.getElementById('githubLink').href = githubLink;
+    document.getElementById('demoLink').href = demoLink;
+
+    document.getElementById('projectDetails').classList.add('active');
+}
+
+function closeProjectDetails() {
+    document.getElementById('projectDetails').classList.remove('active');
+}
+</script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jogi Gowri Akash. All rights reserved.</p>
+            <ul>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+                <li><a href="mailto:your.email@example.com">Email</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function showProjectDetails(title, description, technologies, githubUrl, demoUrl) {
+            document.getElementById('projectTitle').textContent = title;
+            document.getElementById('projectDescription').textContent = description;
+            
+            const techContainer = document.getElementById('projectTech');
+            techContainer.innerHTML = '';
+            technologies.forEach(tech => {
+                const pill = document.createElement('span');
+                pill.className = 'tech-pill';
+                pill.textContent = tech;
+                techContainer.appendChild(pill);
+            });
+            
+            document.getElementById('githubLink').href = githubUrl;
+            document.getElementById('demoLink').href = demoUrl;
+            
+            document.getElementById('projectDetails').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectDetails() {
+            document.getElementById('projectDetails').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        document.getElementById('projectDetails').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectDetails();
+            }
+        });
+    </script>
+
+</body>
+</html>

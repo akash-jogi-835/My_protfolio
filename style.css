@@ -1,0 +1,268 @@
+/* Header Reset & Layout */
+.site-header {
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00bfff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #00bfff;
+  }
+  
+  /* Hero Section with Background Image */
+  .hero-section {
+    background: url('your-image.png') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .hero-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  /* Text styles */
+  .hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .highlight {
+    color: #00bfff;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1.2s ease-out 0.3s both;
+  }
+  
+  .typing {
+    font-size: 1.5rem;
+    color: #00bfff;
+    margin: 2.5rem auto; /* Changed to auto for horizontal centering */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #00bfff;
+    width: 0;
+    display: block; /* Changed to block for proper centering */
+    text-align: center; /* Center the text */
+    animation: 
+      typing 3s steps(40, end) forwards,
+      blink 0.75s step-end infinite,
+      fadeIn 0.5s ease-out 1.5s both;
+    max-width: 350px; /* Adjust as needed */
+}
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; max-width: 350px; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Buttons */
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.6s both;
+  }
+  
+  .btn {
+    padding: 0.9rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+  }
+  
+  .btn.primary {
+    background-color: #00bfff;
+    color: #0e0e0e;
+  }
+  
+  .btn.primary:hover {
+    background: transparent;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+    transform: translateY(-3px);
+  }
+  
+  .btn.secondary {
+    background: transparent;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+  }
+  
+  .btn.secondary:hover {
+    background-color: #00bfff;
+    color: #0e0e0e;
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .typing {
+      font-size: 1.2rem;
+    }
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .cta-buttons {
+      gap: 1rem;
+    }
+  }
+
+  /* Add to style.css */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .particle {
+    position: absolute;
+    background: rgba(0, 191, 255, 0.5);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-1000px) rotate(720deg); }
+  }
+
+  .highlight {
+    text-shadow: 0 0 10px #00bfff, 
+                 0 0 20px rgba(0, 191, 255, 0.8);
+    animation: pulse 2s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from { text-shadow: 0 0 10px #00bfff; }
+    to { text-shadow: 0 0 20px #00bfff, 
+                     0 0 30px rgba(0, 191, 255, 0.6); }
+  }
+
+  .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(30deg);
+  transition: all 0.3s;
+}
+
+.btn:hover:after {
+  left: 100%;
+}
